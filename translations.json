@@ -52,7 +52,7 @@
   "services_title": {
     "he": "השירותים שלנו",
     "en": "Our Services",
-    "es": "Nuestros Servicios"
+    "es": "Nuestro Servicios"
   },
   "services_web_pentesting_title": {
     "he": "בדיקות חדירה לאפליקציות ווב",
@@ -72,7 +72,7 @@
   "why_important": {
     "he": "למה זה חשוב?",
     "en": "Why is it important?",
-    "es": "¿Por qué es importante?"
+    "es": "Por qué es importante?"
   },
   "web_pentesting_importance": {
     "he": "בעידן הדיגיטלי, אפליקציות ווב הן חזית העסק שלך. פרצת אבטחה יכולה לגרום לנזק כלכלי משמעותי, פגיעה במוניטין, אובדן אמון הלקוחות וגם אובדן פרטיות של הלקוחות שלך. בדיקות חדירה מונעות סיכונים אלו ומבטיחות שהנכסים הדיגיטליים שלך מוגנים מפני איומים רבים.",
@@ -82,7 +82,7 @@
   "process_includes": {
     "he": "מה כולל התהליך?",
     "en": "What does the process include?",
-    "es": "¿Qué incluye el proceso?"
+    "es": "Qué incluye el proceso?"
   },
   "process_step1": {
     "he": "סקירה ראשונית: מיפוי האפליקציה או האתר שלך והבנת הארכיטקטורה שלה.",
@@ -257,7 +257,7 @@
   "about_title": {
     "he": "למה Secure Pulse?",
     "en": "Why Secure Pulse?",
-    "es": "¿Por qué Secure Pulse?"
+    "es": "Por qué Secure Pulse?"
   },
   "about_description": {
     "he": "בSecure Pulse, אנו מבינים שאבטחת המידע היא קריטית בעידן הדיגיטלי. צוות המומחים שלנו משלב ידע טכני מעמיק עם הבנה עסקית, כדי לספק פתרונות אבטחה מקיפים ומותאמים אישית.",
@@ -347,7 +347,7 @@
   "contact_cta_text": {
     "he": "מוכנים להגן על הנכסים הדיגיטליים שלכם? צרו קשר עוד היום!",
     "en": "Ready to protect your digital assets? Contact us today!",
-    "es": "¿Listo para proteger sus activos digitales? ¡Contáctenos hoy!"
+    "es": "Listo para proteger sus activos digitales? ¡Contáctenos hoy!"
   },
   "form_email": {
     "he": "האימייל שלך:",
