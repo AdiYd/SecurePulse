@@ -1,14 +1,93 @@
-// Global variable to store the current language
-let currentLanguage = 'he';
+// Global variables
+let currentLanguage = localStorage.getItem('preferredLanguage') || 'he';
+let translations = {};
 
+// Main initialization function
 document.addEventListener('DOMContentLoaded', function() {
-    initContactForm();
-    initSmoothScrolling();
-    initVoiceInput();
-    initLanguageSelector();
-    loadTranslations(currentLanguage); // Initial loading of translations
+    initializeWebsite();
 });
 
+function initializeWebsite() {
+    loadTranslations(currentLanguage)
+        .then(() => {
+            initContactForm();
+            initSmoothScrolling();
+            initVoiceInput();
+            initLanguageSelector();
+            applyTranslations(currentLanguage);
+        })
+        .catch(error => console.error('Error initializing website:', error));
+}
+
+// Language functions
+function loadTranslations(lang) {
+    return fetch('translations.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            translations = data;
+            console.log('Translations loaded:', translations);
+        })
+        .catch(error => {
+            console.error('Error loading translations:', error);
+            throw error;
+        });
+}
+
+function applyTranslations(lang) {
+    document.documentElement.lang = lang;
+    document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+
+    // Apply translations to all elements with data-translate attribute
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (translations[key] && translations[key][lang]) {
+            if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
+                element.placeholder = translations[key][lang];
+            } else {
+                element.textContent = translations[key][lang];
+            }
+
+            // Set direction for each element
+            element.style.direction = lang === 'he' ? 'rtl' : 'ltr';
+        }
+    });
+
+    // Update dates
+    document.querySelectorAll('time[data-translate]').forEach(element => {
+        const dateKey = element.getAttribute('data-translate');
+        if (translations[dateKey] && translations[dateKey][lang]) {
+            element.textContent = translations[dateKey][lang];
+        }
+    });
+
+    document.title = translations.page_title[lang];
+    updateLanguageFlag(lang);
+}
+
+function changeLanguage(lang) {
+    currentLanguage = lang;
+    applyTranslations(lang);
+    localStorage.setItem('preferredLanguage', lang);
+}
+
+function updateLanguageFlag(lang) {
+    const flagElement = document.getElementById('current-language-flag');
+    if (flagElement) {
+        const flagUrls = {
+            'he': 'https://flagcdn.com/w40/il.png',
+            'en': 'https://flagcdn.com/w40/us.png',
+            'es': 'https://flagcdn.com/w40/es.png'
+        };
+        flagElement.src = flagUrls[lang] || flagUrls['en'];
+    }
+}
+
+// UI Initialization functions
 function initContactForm() {
     const form = document.getElementById('contact-form');
     const responseDiv = document.getElementById('contact-form-response');
@@ -18,7 +97,15 @@ function initContactForm() {
 
 function initSmoothScrolling() {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', smoothScroll);
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                document.querySelector(href).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
 }
 
@@ -27,7 +114,10 @@ function initVoiceInput() {
     if (recognitionButton && 'webkitSpeechRecognition' in window) {
         const recognition = new webkitSpeechRecognition();
         recognitionButton.addEventListener('click', () => recognition.start());
-        recognition.onresult = handleVoiceInput;
+        recognition.onresult = function(event) {
+            console.log('Voice input received:', event.results[0][0].transcript);
+            // Here you can add logic to handle the voice input
+        };
     }
 }
 
@@ -37,12 +127,13 @@ function initLanguageSelector() {
     if (languageToggle && languageDropdown) {
         languageToggle.addEventListener('click', toggleLanguageDropdown);
         document.querySelectorAll('.language-option').forEach(option => {
-            option.addEventListener('click', changeLanguage);
+            option.addEventListener('click', handleLanguageChange);
         });
         document.addEventListener('click', closeLanguageDropdown);
     }
 }
 
+// Event handlers
 function handleFormSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -53,36 +144,18 @@ function handleFormSubmit(event) {
         body: new FormData(form)
     })
     .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        responseDiv.textContent = translations.form_success[currentLanguage];
         responseDiv.style.display = 'block';
         form.reset();
     })
     .catch(error => {
         console.error('Error:', error);
-        responseDiv.textContent = 'An error occurred. Please try again.';
+        responseDiv.textContent = translations.form_error[currentLanguage];
         responseDiv.style.display = 'block';
     });
-}
-
-function smoothScroll(e) {
-    e.preventDefault();
-    const href = this.getAttribute('href');
-    if (href && href !== '#') {
-        document.querySelector(href).scrollIntoView({
-            behavior: 'smooth'
-        });
-    }
-}
-
-function toggleServiceDetails(serviceId) {
-    const details = document.getElementById(serviceId + '-details');
-    if (details) {
-        details.style.display = details.style.display === 'none' ? 'block' : 'none';
-    }
-}
-
-function handleVoiceInput(event) {
-    console.log('Voice input received:', event.results[0][0].transcript);
-    // Here you can add logic to handle the voice input
 }
 
 function toggleLanguageDropdown(e) {
@@ -93,25 +166,12 @@ function toggleLanguageDropdown(e) {
     }
 }
 
-function changeLanguage(e) {
+function handleLanguageChange(e) {
     e.preventDefault();
     e.stopPropagation();
     const lang = this.getAttribute('data-lang');
-    console.log('Changing language to:', lang);
-
-    const flagSrc = this.querySelector('img').src;
-    const currentLanguageFlag = document.getElementById('current-language-flag');
-    if (currentLanguageFlag) {
-        currentLanguageFlag.src = flagSrc;
-    }
-
-    const languageDropdown = document.getElementById('language-dropdown');
-    if (languageDropdown) {
-        languageDropdown.style.display = 'none';
-    }
-
-    currentLanguage = lang;
-    loadTranslations(lang);
+    changeLanguage(lang);
+    document.getElementById('language-dropdown').style.display = 'none';
 }
 
 function closeLanguageDropdown(e) {
@@ -124,43 +184,10 @@ function closeLanguageDropdown(e) {
     }
 }
 
-function loadTranslations(lang) {
-    console.log('Loading translations for:', lang);
-    fetch('translations.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            console.log('Translations loaded:', data);
-            applyTranslations(data, lang);
-        })
-        .catch(error => {
-            console.error('Error loading translations:', error);
-        });
-}
-
-function applyTranslations(translations, lang) {
-    console.log('Applying translations for language:', lang);
-    document.querySelectorAll('[data-translate]').forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[key] && translations[key][lang]) {
-            if (element.tagName === 'INPUT' && element.type === 'placeholder') {
-                element.placeholder = translations[key][lang];
-            } else {
-                element.textContent = translations[key][lang];
-            }
-        } else {
-            console.warn(`Translation missing for key: ${key} in language: ${lang}`);
-        }
-    });
-
-    // Update the direction of the page based on the language
-    document.dir = (lang === 'he') ? 'rtl' : 'ltr';
-
-    // Update CSS classes based on the language
-    document.body.classList.remove('lang-he', 'lang-en', 'lang-es');
-    document.body.classList.add(`lang-${lang}`);
+// Utility functions
+function toggleServiceDetails(serviceId) {
+    const details = document.getElementById(serviceId + '-details');
+    if (details) {
+        details.style.display = details.style.display === 'none' ? 'block' : 'none';
+    }
 }
