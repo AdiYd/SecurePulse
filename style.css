@@ -11,6 +11,9 @@
     --spacing-small: 0.5rem;
     --spacing-medium: 1rem;
     --spacing-large: 2rem;
+    --nav-text-color: var(--nav-text-color);
+    --header-background: #0a2342;
+    --header-text-color: #ffffff;
 }
 
 /* Reset and Base Styles */
@@ -110,7 +113,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 665px;
     margin: 0 auto;
     padding: 0 20px;
     position: relative;
@@ -118,7 +121,6 @@ header {
 
 .logo {
     position: absolute;
-    left: 50%;
     transform: translateX(-50%);
 }
 
@@ -127,10 +129,10 @@ header {
 }
 
 nav {
-    position: absolute !important;
-    left: -200px !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
+    position: absolute ;
+    left: -200px ;
+    top: 50% ;
+    transform: translateY(-50%) ;
 }
 
 nav ul {
@@ -146,7 +148,7 @@ nav ul li {
 }
 
 nav ul li a {
-    color: var(--white);
+    color: var(--nav-text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
@@ -158,6 +160,12 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     margin-top: 60px;
+}
+
+.blog-page main {
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    min-height: 100vh;
+    padding-top: 60px; /* להתאמה עם ה-header הקבוע */
 }
 
 section {
@@ -389,9 +397,15 @@ footer {
 }
 
 .blog-page .blog-post {
+    background-color: rgba(255, 255, 255, 0.9); /* רקע לבן שקוף מעט */
     margin-bottom: 3rem;
-    padding-bottom: 2rem;
-    border-bottom: 1px solid #eee;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.blog-page h1, .blog-page h2 {
+    color: var(--white);
 }
 
 .blog-page .blog-post:last-child {
@@ -442,7 +456,6 @@ footer {
     background: none;
     border: none;
     cursor: pointer;
-    padding: 0;
 }
 
 .language-btn img {
@@ -451,6 +464,7 @@ footer {
     border-radius: 50%;
     border: 2px solid transparent;
     transition: border-color 0.3s ease;
+    margin-right: -765px;
 }
 
 .language-btn:hover img {
@@ -460,11 +474,11 @@ footer {
 .language-dropdown {
     display: none;
     position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: #ffffff;
+    top: 88%;
+    right: -403px;
+    background-color: #ffffff87;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 11px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     overflow: hidden;
 }
@@ -472,7 +486,7 @@ footer {
 .language-option {
     display: flex;
     align-items: center;
-    padding: 10px 15px;
+    padding: 3px 1px;
     text-decoration: none;
     color: #333333;
     transition: background-color 0.3s ease;
@@ -503,6 +517,7 @@ footer {
 
     nav {
         margin-left: 0;
+        margin-right: auto;
         width: 100%;
         text-align: center;
     }
@@ -518,11 +533,13 @@ footer {
     nav ul li {
         margin: 10px 0;
     }
+
     .language-selector {
         position: static;
         transform: none;
         margin-top: 1rem;
     }
+
     .about-grid, .industry-cards {
         grid-template-columns: 1fr;
     }
@@ -567,4 +584,56 @@ footer {
     .language-option:hover {
         background-color: #555;
     }
+}
+
+main.blog-page {
+    background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+    min-height: calc(100vh - 60px); /* מניח שהכותרת היא בערך 60px גבוהה */
+    padding-top: 60px; /* מרווח עבור הכותרת הקבועה */
+    color: var(--white);
+}
+
+.blog-page .container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: 2rem;
+}
+
+.blog-page h1, .blog-page h2, .blog-page .post-meta, .blog-page p {
+    color: var(--white);
+}
+
+.blog-page .read-more {
+    background-color: var(--white);
+    color: var(--primary-color);
+}
+
+.blog-page .read-more:hover {
+    background-color: var(--accent-color);
+    color: var(--white);
+}
+
+.blog-page .blog-post {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.always-ltr {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+.blog-post-page h1 {
+    color: var(--post-title-color); /* צבע הכותרת הראשית של עמוד הפוסט */
+}
+/* Default direction */
+body[lang="he"] {
+    direction: rtl;
+}
+
+body[lang="en"], body[lang="es"] {
+    direction: ltr;
 }
