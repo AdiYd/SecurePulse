@@ -49,7 +49,7 @@ body[lang="en"], body[lang="es"] {
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
-    color: var(--primary-color);
+    color: color: #ffffff;
 }
 
 h1 {
@@ -623,7 +623,7 @@ main.blog-page {
 
 .always-ltr {
     direction: ltr !important;
-    text-align: left !important;
+    text-align: embed;
 }
 
 .blog-post-page h1 {
@@ -636,4 +636,35 @@ body[lang="he"] {
 
 body[lang="en"], body[lang="es"] {
     direction: ltr;
+}
+.about-expertise {
+  direction: inherit;
+  text-align: inherit;
+}
+
+[lang="en"] .about-expertise,
+[lang="es"] .about-expertise {
+  direction: ltr;
+  text-align: left;
+}
+
+[lang="he"] .about-expertise {
+  direction: rtl;
+  text-align: right;
+}
+[lang="en"] footer, [lang="es"] footer {
+  direction: ltr;
+  text-align: left;
+}
+
+[lang="he"] footer {
+  direction: rtl;
+  text-align: right;
+}
+[lang="en"] .form-group, [lang="es"] .form-group {
+  flex-direction: row;
+}
+
+[lang="he"] .form-group {
+  flex-direction: row-reverse;
 }
