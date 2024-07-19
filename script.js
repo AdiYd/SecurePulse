@@ -78,11 +78,14 @@ function applyTranslations(lang) {
         if (translations[dateKey] && translations[dateKey][lang]) {
             element.textContent = translations[dateKey][lang];
         }
+        });
+        document.querySelectorAll('.question-mark').forEach(element => {
+        element.style.direction = 'ltr';
     });
-
     document.title = translations.page_title[lang];
     updateLanguageFlag(lang);
 }
+
 function changeLanguage(lang) {
     currentLanguage = lang;
     applyTranslations(lang);
