@@ -41,6 +41,7 @@ function loadTranslations(lang) {
 function applyTranslations(lang) {
     document.documentElement.lang = lang;
     document.documentElement.dir = lang === 'he' ? 'rtl' : 'ltr';
+    document.body.className = `lang-${lang}`; // מוסיף קלאס לגוף המסמך לסגנון ספציפי לשפה
 
     // Apply translations to all elements with data-translate attribute
     document.querySelectorAll('[data-translate]').forEach(element => {
@@ -52,11 +53,25 @@ function applyTranslations(lang) {
                 element.textContent = translations[key][lang];
             }
 
-            // Set direction for each element
-            element.style.direction = lang === 'he' ? 'rtl' : 'ltr';
+            // Set direction for each element, excluding certain elements if needed
+            if (!element.closest('.no-direction-change')) {
+                element.style.direction = lang === 'he' ? 'rtl' : 'ltr';
+                element.style.textAlign = lang === 'he' ? 'right' : 'left';
+            }
         }
     });
+    // טיפול ספציפי בפוטר
+      const footer = document.querySelector('footer');
+      if (footer) {
+        footer.style.direction = lang === 'he' ? 'rtl' : 'ltr';
+        footer.style.textAlign = lang === 'he' ? 'right' : 'left';
+      }
 
+      // טיפול באלמנטים שתמיד צריכים להיות LTR
+      document.querySelectorAll('.always-ltr').forEach(element => {
+        element.style.direction = 'ltr';
+        element.style.unicodeBidi = 'embed';
+      });
     // Update dates
     document.querySelectorAll('time[data-translate]').forEach(element => {
         const dateKey = element.getAttribute('data-translate');
@@ -68,7 +83,6 @@ function applyTranslations(lang) {
     document.title = translations.page_title[lang];
     updateLanguageFlag(lang);
 }
-
 function changeLanguage(lang) {
     currentLanguage = lang;
     applyTranslations(lang);
