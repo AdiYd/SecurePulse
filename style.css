@@ -132,7 +132,7 @@ header {
 
 nav {
     position: absolute ;
-    left: -200px ;
+    left: -235px ;
     top: 50% ;
     transform: translateY(-50%) ;
 }
@@ -466,7 +466,7 @@ footer {
     border-radius: 50%;
     border: 2px solid transparent;
     transition: border-color 0.3s ease;
-    margin-right: -765px;
+    margin-right: -990px;
 }
 
 .language-btn:hover img {
