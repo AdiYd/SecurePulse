@@ -1,7 +1,7 @@
 :root {
     --primary-color: #0a2342;
     --secondary-color: #2ca58d;
-    --accent-color: #f0a500;
+    --accent-color: #3c763d;
     --background-color: #f5f5f5;
     --text-color: #333;
     --white: #ffffff;
@@ -50,6 +50,8 @@ body[lang="en"], body[lang="es"] {
 h1, h2, h3, h4, h5, h6 {
     margin-bottom: 1rem;
     color: color: #ffffff;
+    text-align: center;
+     margin: 20px 0;
 }
 
 h1 {
@@ -605,7 +607,7 @@ main.blog-page {
 }
 
 .blog-page .read-more {
-    background-color: var(--white);
+    background-color: #2ca58d;
     color: var(--primary-color);
 }
 
@@ -629,6 +631,7 @@ main.blog-page {
 .blog-post-page h1 {
     color: var(--post-title-color); /* צבע הכותרת הראשית של עמוד הפוסט */
 }
+
 /* Default direction */
 body[lang="he"] {
     direction: rtl;
@@ -637,6 +640,7 @@ body[lang="he"] {
 body[lang="en"], body[lang="es"] {
     direction: ltr;
 }
+
 .about-expertise {
   direction: inherit;
   text-align: inherit;
@@ -652,6 +656,7 @@ body[lang="en"], body[lang="es"] {
   direction: rtl;
   text-align: right;
 }
+
 [lang="en"] footer, [lang="es"] footer {
   direction: ltr;
   text-align: left;
@@ -661,10 +666,17 @@ body[lang="en"], body[lang="es"] {
   direction: rtl;
   text-align: right;
 }
+
 [lang="en"] .form-group, [lang="es"] .form-group {
   flex-direction: row;
 }
 
 [lang="he"] .form-group {
   flex-direction: row-reverse;
+}
+
+.question-mark {
+    display: inline-block;
+    direction: ltr !important;
+    unicode-bidi: embed !important; /* מונע בעיות כיווניות */
 }
