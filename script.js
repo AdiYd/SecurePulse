@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeWebsite() {
+    
     loadTranslations(currentLanguage)
         .then(() => {
             initContactForm();
@@ -20,8 +21,8 @@ function initializeWebsite() {
 }
 
 // Language functions
-function loadTranslations(lang) {
-    return fetch('translations.json')
+async function loadTranslations(lang) {
+    return fetch('/assets/translations.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -139,9 +140,11 @@ function initVoiceInput() {
 }
 
 function initLanguageSelector() {
+    console.log('ok');
     const languageToggle = document.getElementById('language-toggle');
     const languageDropdown = document.getElementById('language-dropdown');
     if (languageToggle && languageDropdown) {
+       
         languageToggle.addEventListener('click', toggleLanguageDropdown);
         document.querySelectorAll('.language-option').forEach(option => {
             option.addEventListener('click', handleLanguageChange);
@@ -175,7 +178,13 @@ function handleFormSubmit(event) {
     });
 }
 
+function toggleHamburger(e){
+    console.log('Clicked me: ', e,e.target, this);
+    document.getElementById('mobileDropDownMenu').classList.toggle('hidden');
+}
+
 function toggleLanguageDropdown(e) {
+    console.log('Here')
     e.stopPropagation();
     const languageDropdown = document.getElementById('language-dropdown');
     if (languageDropdown) {
@@ -205,6 +214,20 @@ function closeLanguageDropdown(e) {
 function toggleServiceDetails(serviceId) {
     const details = document.getElementById(serviceId + '-details');
     if (details) {
-        details.style.display = details.style.display === 'none' ? 'block' : 'none';
+        details.style.display = !['none',''].includes(details.style.display) ? 'none' : 'block';
     }
 }
+
+function onSubmit(){
+    let item = document.getElementById('submitMsg').classList;
+    item.toggle('hidden')
+}
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');
+    });
+});
