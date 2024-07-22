@@ -563,5 +563,105 @@
     "he": "לכל הפוסטים",
     "en": "View all posts",
     "es": "Ver todas las publicaciones"
+  },
+  "post_title_retail": {
+    "he": "אבטחת מידע בקניות אונליין: מה שכל צרכן חייב לדעת",
+    "en": "Information Security in Online Shopping: What Every Consumer Must Know",
+    "es": "Seguridad de la Información en Compras en Línea: Lo Que Todo Consumidor Debe Saber"
+  },
+  "post_date_retail": {
+    "he": "22 ביולי, 2024",
+    "en": "July 22, 2024",
+    "es": "22 de julio de 2024"
+  },
+  "post_summary_retail": {
+    "he": "קניות אונליין הן נוחות ויעילות, אך חשוב להיות מודעים לסיכונים ולנקוט באמצעי זהירות. קראו עוד כדי ללמוד כיצד להגן על עצמכם בעת הקניות ברשת.",
+    "en": "Online shopping is convenient and efficient, but it's important to be aware of the risks and take precautions. Read more to learn how to protect yourself while shopping online.",
+    "es": "Las compras en línea son convenientes y eficientes, pero es importante estar al tanto de los riesgos y tomar precauciones. Lee más para aprender cómo protegerte mientras compras en línea."
+  },
+  "retail_intro": {
+    "he": "בעידן הדיגיטלי, קניות אונליין הפכו לחלק בלתי נפרד מחיי היומיום שלנו. מרכישת מוצרי מזון ועד לקניית מוצרי אלקטרוניקה - הכל נמצא במרחק קליק. אבל האם אנחנו מודעים לסיכונים הכרוכים בכך?",
+    "en": "In the digital age, online shopping has become an integral part of our daily lives. From purchasing groceries to buying electronics – everything is just a click away. But are we aware of the risks involved?",
+    "es": "En la era digital, las compras en línea se han convertido en una parte integral de nuestra vida diaria. Desde la compra de comestibles hasta la compra de productos electrónicos, todo está a solo un clic de distancia. Pero, ¿somos conscientes de los riesgos que conlleva?"
+  },
+  "retail_revolution": {
+    "he": "המהפכה של הקמעונאות האונליין",
+    "en": "The Online Retail Revolution",
+    "es": "La Revolución del Comercio Electrónico"
+  },
+  "retail_revolution_content": {
+    "he": "סקירה קצרה על התפתחות הקמעונאות האונליין. סטטיסטיקות על היקף הקניות האונליין כיום.",
+    "en": "A brief overview of the evolution of online retail. Statistics on the current scale of online shopping.",
+    "es": "Una breve reseña de la evolución del comercio electrónico. Estadísticas sobre la escala actual de las compras en línea."
+  },
+  "retail_benefits": {
+    "he": "היתרונות של קניות אונליין",
+    "en": "Benefits of Online Shopping",
+    "es": "Beneficios de las Compras en Línea"
+  },
+  "retail_benefits_content": {
+    "he": "נוחות ונגישות, מגוון רחב של מוצרים, השוואת מחירים קלה.",
+    "en": "Convenience and accessibility, a wide range of products, easy price comparison.",
+    "es": "Conveniencia y accesibilidad, una amplia gama de productos, fácil comparación de precios."
+  },
+  "retail_risks": {
+    "he": "הסיכונים הנסתרים",
+    "en": "Hidden Risks",
+    "es": "Riesgos Ocultos"
+  },
+  "retail_risks_content": {
+    "he": "גניבת זהות, הונאות אשראי, פישינג ואתרים מזויפים, דליפת מידע אישי.",
+    "en": "Identity theft, credit card fraud, phishing and fake websites, personal information leaks.",
+    "es": "Robo de identidad, fraude con tarjetas de crédito, phishing y sitios web falsos, fugas de información personal."
+  },
+  "retail_exploitation": {
+    "he": "כיצד פושעי סייבר מנצלים את הקמעונאות האונליין",
+    "en": "How Cybercriminals Exploit Online Retail",
+    "es": "Cómo los Cibercriminales Explotan el Comercio Electrónico"
+  },
+  "retail_exploitation_content": {
+    "he": "שיטות נפוצות של תקיפה, דוגמאות לאירועי אבטחה משמעותיים בתחום הקמעונאות.",
+    "en": "Common attack methods, examples of significant security incidents in retail.",
+    "es": "Métodos comunes de ataque, ejemplos de incidentes de seguridad significativos en el comercio minorista."
+  },
+  "retail_protection_measures": {
+    "he": "מה חברות קמעונאות עושות כדי להגן על לקוחותיהן",
+    "en": "What Retail Companies Do to Protect Their Customers",
+    "es": "Qué Hacen las Empresas de Comercio Electrónico para Proteger a Sus Clientes"
+  },
+  "retail_protection_measures_content": {
+    "he": "השקעה במערכות אבטחה מתקדמות, הצפנת מידע, אימות דו-שלבי.",
+    "en": "Investment in advanced security systems, data encryption, two-factor authentication.",
+    "es": "Inversión en sistemas de seguridad avanzados, cifrado de datos, autenticación de dos factores."
+  },
+  "retail_tips": {
+    "he": "טיפים לקנייה בטוחה אונליין",
+    "en": "Tips for Safe Online Shopping",
+    "es": "Consejos para Compras en Línea Seguras"
+  },
+  "retail_tips_content": {
+    "he": "שימוש בסיסמאות חזקות, בדיקת אבטחת האתר (HTTPS), שימוש בשיטות תשלום בטוחות, היזהרות מעסקאות חשודות.",
+    "en": "Use strong passwords, check website security (HTTPS), use secure payment methods, beware of suspicious deals.",
+    "es": "Usa contraseñas fuertes, verifica la seguridad del sitio web (HTTPS), usa métodos de pago seguros, ten cuidado con las ofertas sospechosas."
+  },
+  "retail_future": {
+    "he": "העתיד של אבטחת מידע בקמעונאות אונליין",
+    "en": "The Future of Information Security in Online Retail",
+    "es": "El Futuro de la Seguridad de la Información en el Comercio Electrónico"
+  },
+  "retail_future_content": {
+    "he": "טכנולוגיות חדשות כמו בלוקצ'יין, שימוש בבינה מלאכותית לזיהוי הונאות.",
+    "en": "New technologies like blockchain, use of artificial intelligence to detect fraud.",
+    "es": "Nuevas tecnologías como blockchain, uso de inteligencia artificial para detectar fraudes."
+  },
+  "retail_conclusion": {
+    "he": "קניות אונליין הן נוחות ויעילות, אך חשוב להיות מודעים לסיכונים ולנקוט באמצעי זהירות. ככל שנהיה מודעים יותר ונפעל בחכמה, כך נוכל ליהנות מיתרונות הקמעונאות האונליין בבטחה.",
+    "en": "Online shopping is convenient and efficient, but it's important to be aware of the risks and take precautions. The more aware we are and the smarter we act, the more we can safely enjoy the benefits of online retail.",
+    "es": "Las compras en línea son convenientes y eficientes, pero es importante estar al tanto de los riesgos y tomar precauciones. Cuanto más conscientes estemos y más inteligentemente actuemos, más podremos disfrutar de los beneficios del comercio electrónico de manera segura."
+  },
+  "retail_cta": {
+    "he": "הגן על הקניות האונליין שלך עם Secure Pulse! צור קשר עוד היום לקבלת שירותי אבטחת מידע מותאמים אישית.",
+    "en": "Protect your online shopping with Secure Pulse! Contact us today for customized information security services.",
+    "es": "¡Protege tus compras en línea con Secure Pulse! Contáctanos hoy para servicios personalizados de seguridad de la información."
   }
 }
