@@ -2,6 +2,7 @@
 <html lang="he" dir="rtl">
 <head>
     <meta charset="UTF-8">
+    <script type="text/javascript" src="https://livejs.com/live.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title data-translate="page_title">Secure Pulse - אבטחה מתקדמת לעולם הדיגיטלי</title>
     <meta name="description" content="Secure Pulse מספקת שירותי Penetration Testing מתקדמים המתמחים בבריאות דיגיטלית וקמעונאות אונליין. הגנו על הנכסים הדיגיטליים שלכם עם המומחים שלנו.">
@@ -12,17 +13,14 @@
 <body>
     <header>
         <nav class="header-container">
-            <nav class="main-menu">
-                <ul>
-                    <li><a href="#home" data-translate="nav_home">בית</a></li>
-                    <li><a href="#blog" data-translate="nav_blog">בלוג</a></li>
-                    <li><a href="#services" data-translate="nav_services">שירותים</a></li>
-                    <li><a href="#about" data-translate="nav_about">אודות</a></li>
-                    <li><a href="#industries" data-translate="nav_industries">תעשיות</a></li>
-                    <li><a href="#contact" class="cta-button" data-translate="nav_contact">צור קשר</a></li>
-                </ul>
-            </nav>
-            <div class="language-selector">
+            <div class="hamburger">
+                <button onclick="toggleHamburger(this)" class="hamburger-menu" aria-label="תפריט">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="language-selector mobile">
                 <button class="language-btn" id="language-toggle">
                     <img src="https://flagcdn.com/w40/il.png" alt="current language" id="current-language-flag">
                     <i class="fas fa-caret-down"></i>
@@ -43,10 +41,30 @@
                 </div>
             </div>
             <div class="logo">
-                <img src="images/secure-pulse-logo.png" alt="Secure Pulse Logo">
+                <img src="./pic/logo.png" alt="Secure Pulse Logo">
+            </div>
+            <div class="main-menu">
+                <ul>
+                    <li><a href="#home" data-translate="nav_home">בית</a></li>
+                    <li><a href="#blog" data-translate="nav_blog">בלוג</a></li>
+                    <li><a href="#services" data-translate="nav_services">שירותים</a></li>
+                    <li><a href="#about" data-translate="nav_about">אודות</a></li>
+                    <li><a href="#industries" data-translate="nav_industries">תעשיות</a></li>
+                    <li><a href="#contact" class="cta-button" data-translate="nav_contact">צור קשר</a></li>
+                </ul>
             </div>
         </nav>
     </header>
+    <div id="mobileDropDownMenu" class="main-menu-mobile hidden">
+        <ul>
+            <li><a href="#home" data-translate="nav_home">בית</a></li>
+            <li><a href="#blog" data-translate="nav_blog">בלוג</a></li>
+            <li><a href="#services" data-translate="nav_services">שירותים</a></li>
+            <li><a href="#about" data-translate="nav_about">אודות</a></li>
+            <li><a href="#industries" data-translate="nav_industries">תעשיות</a></li>
+            <li><a href="#contact" data-translate="nav_contact">צור קשר</a></li>
+        </ul>
+    </div>
 
     <main>
         <section id="home" class="hero">
@@ -62,7 +80,7 @@
                 <h2 class="no-direction-change" data-translate="services_title">השירותים שלנו</h2>
                 <div class="services-grid">
                     <div class="service-card">
-                        <h3 data-translate="services_web_pentesting_title">בדיקות חדירה לאפליקציות ווב</h3>
+                        <h3 data-translate="services_web_pentesting_title">בדיקות חדירה לאפליקציות WEB </h3>
                         <p data-translate="services_web_pentesting_description">בדיקות חדירה לאפליקציות ווב הן תהליך מקיף לזיהוי ותיקון פרצות אבטחה באתרים ואפליקציות מבוססות דפדפן. אנחנו מדמים התקפות של האקרים אמיתיים כדי לחשוף נקודות תורפה לפני שפורצים אמיתיים מנצלים אותן.</p>
                         <button class="read-more" onclick="toggleServiceDetails('web-pentesting')" data-translate="read_more">קרא עוד</button>
                         <div id="web-pentesting-details" class="service-details">
@@ -133,7 +151,7 @@
 
         <section id="about" class="bg-light">
             <div class="container">
-                <h2 class="no-direction-change" data-translate="about_title">למה Secure Pulse<span class="question-mark" style="direction: ltr;">?</span></h2>
+                <h2 class="no-direction-change" data-translate="about_title">למה Secure Pulse<span class="question-mark" style="direction: auto;">?</span></h2>
                 <div class="about-grid">
                     <div class="about-text">
                         <p data-translate="about_description">בSecure Pulse, אנו מבינים שאבטחת המידע היא קריטית בעידן הדיגיטלי. צוות המומחים שלנו משלב ידע טכני מעמיק עם הבנה עסקית, כדי לספק פתרונות אבטחה מקיפים ומותאמים אישית.</p>
@@ -174,15 +192,15 @@
                 <h2 class="no-direction-change" data-translate="blog_title">הבלוג שלנו</h2>
                 <div class="blog-preview">
                     <article class="blog-post">
-                        <h3 data-translate="blog_post1_title">כותרת הפוסט הראשון</h3>
-                        <p class="post-meta">תאריך: <time datetime="2024-07-10">10 ביולי, 2024</time></p>
-                        <p data-translate="blog_post1_summary">זהו תקציר של הפוסט הראשון. כאן תוכל לכתוב כמה משפטים שיתנו טעימה מהתוכן המלא...</p>
-                        <a href="blog/post1.html" class="read-more" data-translate="read_more">קרא עוד</a>
+                        <h3 data-translate="post_title_health">הבריאות שלך בעידן הדיגיטלי: למה אבטחת מידע חשובה לכולנו</h3>
+                        <p class="post-meta" data-translate="post_date_health">תאריך: <time datetime="2024-07-16">16 ביולי, 2024</time></p>
+                        <p data-translate="post_summary_health">בעידן הדיגיטלי, המידע הרפואי שלנו הופך לנגיש יותר מאי פעם. אך עם היתרונות הרבים מגיעים גם סיכונים. גלה למה אבטחת מידע רפואי היא קריטית עבור כולנו.</p>
+                        <a href="blog/health-digital-age.html" class="read-more" data-translate="read_more">קרא עוד</a>
                     </article>
                     <article class="blog-post">
-                        <h3 data-translate="blog_post2_title">כותרת הפוסט השני</h3>
-                        <p class="post-meta">תאריך: <time datetime="2024-07-03">3 ביולי, 2024</time></p>
-                        <p data-translate="blog_post2_summary">זהו תקציר של הפוסט השני. גם כאן תוכל לתת טעימה מהתוכן המלא...</p>
+                        <h3 data-translate="blog_post2_title">אבטחה מתקדמת לעולם הדיגיטלי שלכם</h3>
+                        <p class="post-meta" data-translate="post_date_health">תאריך: <time datetime="2024-07-22">22 ביולי, 2024</time></p>
+                        <p data-translate="blog_post2_summary">הגנו על המידע הרגיש שלכם עם שירותי Penetration Testing מותאמים אישית</p>
                         <a href="blog/post2.html" class="read-more" data-translate="read_more">קרא עוד</a>
                     </article>
                 </div>
@@ -199,16 +217,16 @@
 
                 <form action="https://formspree.io/f/mldrdggd" method="POST">
                     <label>
-                        <span data-translate="contact_form_email">Your email:</span>
-                        <input type="email" name="email">
+                        <span data-translate="contact_form_email">אימייל:</span>
+                        <input placeholder="אימייל" onfocus="this.placeholder=''" type="email" name="email">
                     </label>
                     <label>
-                        <span data-translate="contact_form_message">Your message:</span>
-                        <textarea name="message"></textarea>
+                        <span data-translate="contact_form_message">הודעה:</span>
+                        <textarea placeholder="כתבו את תוכן ההודעה" onfocus="this.placeholder=''" name="message"></textarea>
                     </label>
-                    <button class="no-direction-change" type="submit" data-translate="contact_form_submit">Send</button>
+                    <button  onclick="onSubmit()" class="no-direction-change" type="submit" data-translate="contact_form_submit">שלח</button>
                 </form>
-                <div class="contact-form-response">
+                <div id="submitMsg" class="contact-form-response hidden">
                     <p data-translate="contact_form_response">תודה שפנית אלינו! נחזור אליך בהקדם.</p>
                 </div>
             </div>
@@ -219,7 +237,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="images/secure-pulse-logo-white.png" alt="Secure Pulse Logo">
+                    <img src="logo.png" alt="Secure Pulse Logo">
                 </div>
                 <div class="footer-links">
                     <h4 data-translate="footer_quick_links">קישורים מהירים</h4>
