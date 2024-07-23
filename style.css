@@ -196,7 +196,7 @@ main {
 .blog-page main {
     background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
     min-height: 100vh;
-    padding-top: 60px; /* להתאמה עם ה-header הקבוע */
+    padding-top: 20px; /* להתאמה עם ה-header הקבוע */
 }
 
 section {
