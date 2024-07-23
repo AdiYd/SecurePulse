@@ -145,7 +145,9 @@ function initLanguageSelector() {
     const languageDropdown = document.getElementById('language-dropdown');
     if (languageToggle && languageDropdown) {
        
-        languageToggle.addEventListener('click', toggleLanguageDropdown);
+        ['click', 'touchstart'].forEach(event => 
+            languageToggle.addEventListener(event, toggleLanguageDropdown)
+        );
         document.querySelectorAll('.language-option').forEach(option => {
             option.addEventListener('click', handleLanguageChange);
         });
