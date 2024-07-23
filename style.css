@@ -821,7 +821,6 @@ body[lang="en"], body[lang="es"] {
 .blog-post-page .blog-post p {
     overflow: auto; /* Prevents text from overlapping floated images */
 }
-
 @supports (-webkit-touch-callout: none) {
     /* iOS-specific styles */
     header {
@@ -854,6 +853,8 @@ body[lang="en"], body[lang="es"] {
         top: 50%;
         transform: translateY(-50%);
         right: 10px;
+        cursor: pointer;
+        z-index: 1001;
     }
 
     .language-dropdown {
