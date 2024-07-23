@@ -829,12 +829,13 @@ body[lang="en"], body[lang="es"] {
         left: 0;
         right: 0;
         width: 100%;
-        z-index: 1000;
+        z-index: 9999; /* ערך גבוה יותר */
         padding: 10px;
         box-sizing: border-box;
         display: flex;
         justify-content: space-between;
         align-items: center;
+        background-color: #0a2342; /* או הצבע שאתה משתמש בו להדר */
     }
 
     body {
@@ -847,10 +848,13 @@ body[lang="en"], body[lang="es"] {
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
+        order: 2; /* מיקום במרכז */
     }
 
     .hamburger {
         order: 1; /* יופיע ראשון (ימין בעברית) */
+        display: flex;
+        align-items: center;
     }
 
     .language-selector {
@@ -864,7 +868,7 @@ body[lang="en"], body[lang="es"] {
     .language-dropdown {
         position: absolute;
         top: 100%;
-        left: 0; /* שינוי מ-right ל-left */
+        left: 0;
         background-color: #ffffff87;
     }
 
@@ -880,19 +884,36 @@ body[lang="en"], body[lang="es"] {
         background-color: #0a2342;
         width: 100%;
         height: auto;
-        z-index: 999;
+        z-index: 998; /* ערך נמוך יותר מההדר */
+    }
+
+    .hero, .main-content {
+        margin-top: 60px; /* התאם ערך זה לגובה ההדר שלך */
     }
 
     @media (max-width: 768px) {
         .main-menu ul {
             display: none;
         }
-
-        .hamburger {
-            display: flex;
-            align-items: center;
-        }
     }
+}
+
+/* סגנונות כלליים מחוץ לבלוק ה-@supports */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 9999;
+}
+
+body {
+    padding-top: 60px; /* התאם ערך זה לגובה ההדר שלך */
+}
+
+.hero, .main-content {
+    margin-top: 60px; /* התאם ערך זה לגובה ההדר שלך */
 }
 
 html {
