@@ -173,7 +173,7 @@ nav ul li a:hover {
 }
 
 .hamburger-menu {
-    display: block; /* מוסתר כברירת מחדל */
+    display: none; /* מוסתר כברירת מחדל */
     background: none;
     border: none;
     cursor: pointer;
@@ -573,7 +573,7 @@ footer {
     }
 
     .hamburger{
-        display: flex;
+        display: block;
         height: -webkit-fill-available;
         align-self: center;
         /* padding-top:25px; */
