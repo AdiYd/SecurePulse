@@ -844,13 +844,32 @@ body[lang="en"], body[lang="es"] {
     .logo {
         max-height: 40px; /* התאם לפי הצורך */
         width: auto;
-        order: 2;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    .main-menu ul {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
+    .hamburger {
+        order: 1; /* יופיע ראשון (ימין בעברית) */
+    }
+
+    .language-selector {
+        order: 3; /* יופיע אחרון (שמאל בעברית) */
+        position: relative;
+        cursor: pointer;
+        z-index: 1001;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .language-dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0; /* שינוי מ-right ל-left */
+        background-color: #ffffff87;
+    }
+
+    .language-btn {
+        padding: 10px;  /* להגדיל את אזור הלחיצה */
     }
 
     .main-menu-mobile {
@@ -864,46 +883,14 @@ body[lang="en"], body[lang="es"] {
         z-index: 999;
     }
 
-    .language-selector {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        right: 10px;
-        cursor: pointer;
-        z-index: 1001;
-        -webkit-tap-highlight-color: transparent;
-        order: 3;
-    }
-
-    .language-dropdown {
-        position: absolute;
-        top: 100%;
-        right: 0;
-        background-color: #ffffff87;
-    }
-
-    .language-btn {
-        padding: 10px;  /* להגדיל את אזור הלחיצה */
-    }
-
     @media (max-width: 768px) {
+        .main-menu ul {
+            display: none;
+        }
+
         .hamburger {
             display: flex;
             align-items: center;
-            order: 1;
-        }
-
-        .logo {
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        nav {
-            position: static;
-        }
-
-        .main-menu ul {
-            display: none;
         }
     }
 }
