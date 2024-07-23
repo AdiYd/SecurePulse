@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function initializeWebsite() {
-    
     loadTranslations(currentLanguage)
         .then(() => {
             initContactForm();
@@ -17,26 +16,38 @@ function initializeWebsite() {
             initLanguageSelector();
             applyTranslations(currentLanguage);
         })
-        .catch(error => console.error('Error initializing website:', error));
+        .catch(error => {
+            console.error('Error initializing website:', error);
+            // כאן אפשר להוסיף לוגיקה לטיפול בשגיאה, כמו הצגת הודעת שגיאה למשתמש
+            // או אתחול בסיסי של האתר ללא תרגומים
+            fallbackInitialization();
+        });
+}
+
+function fallbackInitialization() {
+    // אתחול בסיסי ללא תרגומים
+    initContactForm();
+    initSmoothScrolling();
+    initVoiceInput();
+    initLanguageSelector();
+    // אפשר להוסיף כאן לוגיקה נוספת לטיפול במצב ללא תרגומים
 }
 
 // Language functions
 async function loadTranslations(lang) {
-    return fetch('translations.json')
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            translations = data;
-            console.log('Translations loaded:', translations);
-        })
-        .catch(error => {
-            console.error('Error loading translations:', error);
-            throw error;
-        });
+    try {
+        const response = await fetch('translations.json');
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        translations = data;
+        console.log('Translations loaded:', translations);
+    } catch (error) {
+        console.error('Error loading translations:', error);
+        // כאן אפשר להוסיף לוגיקה לשימוש בתרגומים ברירת מחדל
+        translations = {}; // או אובייקט עם תרגומים בסיסיים
+    }
 }
 
 function applyTranslations(lang) {
