@@ -22,7 +22,7 @@ function initializeWebsite() {
 
 // Language functions
 async function loadTranslations(lang) {
-    return fetch('/assets/translations.json')
+    return fetch('translations.json')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
