@@ -32,7 +32,7 @@ body {
     font-family: 'Heebo', Arial, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--background-color);
+    background-color: #0a2342;
     direction: rtl;
     padding-top: 60px;
 }
