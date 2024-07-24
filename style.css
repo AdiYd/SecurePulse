@@ -379,9 +379,10 @@ footer {
 }
 
 .footer-logo img {
-    height: 20px;
-    max-height: 80px;
-    width: auto;
+    width: 100%; 
+    max-width: 220px;
+    height: auto;
+    margin-top: 80px;
     
 }
 
