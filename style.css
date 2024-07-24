@@ -34,7 +34,6 @@ body {
     color: var(--text-color);
     background-color: #ffffff;
     direction: rtl;
-    padding-top: 60px;
 }
 
 body[lang="en"], body[lang="es"] {
