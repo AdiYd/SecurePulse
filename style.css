@@ -897,25 +897,3 @@ body[lang="en"], body[lang="es"] {
         }
     }
 }
-
-/* סגנונות כלליים מחוץ לבלוק ה-@supports */
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    width: 100%;
-    z-index: 9999;
-}
-
-body {
-    padding-top: 60px; /* התאם ערך זה לגובה ההדר שלך */
-}
-
-.hero, .main-content {
-    margin-top: 60px; /* התאם ערך זה לגובה ההדר שלך */
-}
-
-html {
-    -webkit-text-size-adjust: 100%;
-}
