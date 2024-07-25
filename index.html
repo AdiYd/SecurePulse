@@ -10,9 +10,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <meta http-equiv="Content-Security-Policy" content="
-        default-src 'self'; 
-        script-src 'self' 'unsafe-inline' https://livejs.com; 
-        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; 
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://livejs.com;
+        style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com;
         font-src https://fonts.gstatic.com;
         img-src 'self' https://flagcdn.com;
         frame-ancestors 'none';
@@ -55,7 +55,7 @@
                 </div>
             </div>
             <div class="logo">
-                <img src="logo-secure-pulse@2x.png" alt="Secure Pulse Logo">
+                <img src="./pic/logo-secure-pulse@2x.png" alt="Secure Pulse Logo">
             </div>
             <div class="main-menu">
                 <ul>
@@ -177,7 +177,7 @@
                         </ul>
                     </div>
                     <div class="about-image">
-                        <img src="0.jpg" alt="מומחה אבטחה של Secure Pulse">
+                        <img src="./pic/0.jpg" alt="מומחה אבטחה של Secure Pulse">
                     </div>
                 </div>
             </div>
@@ -188,12 +188,12 @@
                 <h2 class="no-direction-change" data-translate="industries_title">התמחות בתעשיות מובילות</h2>
                 <div class="industry-cards">
                     <div class="industry-card">
-                        <img src="3.jpg" alt="בריאות דיגיטלית">
+                        <img src="./pic/3.jpg" alt="בריאות דיגיטלית">
                         <h3 class="no-direction-change" data-translate="industries_digital_health_title">בריאות דיגיטלית</h3>
                         <p data-translate="industries_digital_health_description">הגנה על מידע רפואי רגיש ועמידה בתקני HIPAA</p>
                     </div>
                     <div class="industry-card">
-                        <img src="1.jpg" alt="קמעונאות אונליין">
+                        <img src="./pic/1.jpg" alt="קמעונאות אונליין">
                         <h3 class="no-direction-change" data-translate="industries_online_retail_title">קמעונאות אונליין</h3>
                         <p data-translate="industries_online_retail_description">אבטחת פלטפורמות מסחר אלקטרוני ועמידה בתקני PCI DSS</p>
                     </div>
@@ -212,9 +212,9 @@
                         <a href="blog/health-digital-age.html" class="read-more" data-translate="read_more">קרא עוד</a>
                     </article>
                     <article class="blog-post">
-                        <h3 data-translate="blog_post2_title">אבטחה מתקדמת לעולם הדיגיטלי שלכם</h3>
+                        <h3 data-translate="hero_title">אבטחה מתקדמת לעולם הדיגיטלי שלכם</h3>
                         <p class="post-meta" data-translate="post_date_health">תאריך: <time datetime="2024-07-22">22 ביולי, 2024</time></p>
-                        <p data-translate="blog_post2_summary">הגנו על המידע הרגיש שלכם עם שירותי Penetration Testing מותאמים אישית</p>
+                        <p data-translate="hero_description">הגנו על המידע הרגיש שלכם עם שירותי Penetration Testing מותאמים אישית</p>
                         <a href="blog/post2.html" class="read-more" data-translate="read_more">קרא עוד</a>
                     </article>
                 </div>
@@ -229,16 +229,16 @@
                     <p><b data-translate="contact_cta_text" dir="auto">מוכנים להגן על הנכסים הדיגיטליים שלכם? צרו קשר עוד היום!</b></p>
                 </div>
 
-                <form action="https://formspree.io/f/mldrdggd" method="POST">
+                <form id="contact-form" action="https://formspree.io/f/mldrdggd" method="POST" onsubmit="return validateForm()">
                     <label>
                         <span data-translate="contact_form_email">אימייל:</span>
-                        <input placeholder="אימייל" onfocus="this.placeholder=''" type="email" name="email">
+                        <input placeholder="אימייל" onfocus="this.placeholder=''" type="email" name="email" required>
                     </label>
                     <label>
                         <span data-translate="contact_form_message">הודעה:</span>
-                        <textarea placeholder="כתבו את תוכן ההודעה" onfocus="this.placeholder=''" name="message"></textarea>
+                        <textarea placeholder="כתבו את תוכן ההודעה" onfocus="this.placeholder=''" name="message" required></textarea>
                     </label>
-                    <button  onclick="onSubmit()" class="no-direction-change" type="submit" data-translate="contact_form_submit">שלח</button>
+                    <button class="no-direction-change" type="submit" data-translate="contact_form_submit">שלח</button>
                 </form>
                 <div id="submitMsg" class="contact-form-response hidden">
                     <p data-translate="contact_form_response">תודה שפנית אלינו! נחזור אליך בהקדם.</p>
@@ -251,7 +251,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-logo">
-                    <img src="logo-footer.png" alt="Secure Pulse Logo">
+                    <img src="./pic/logo-footer.png" alt="Secure Pulse Logo">
                 </div>
                 <div class="footer-links">
                     <h4 data-translate="footer_quick_links">קישורים מהירים</h4>
