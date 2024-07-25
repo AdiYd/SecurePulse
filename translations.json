@@ -505,9 +505,9 @@
     "es": "Correo Electrónico"
   },
   "footer_copyright": {
-    "he": "&copy; 2024 Secure Pulse. כל הזכויות שמורות.",
-    "en": "&copy; 2024 Secure Pulse. All rights reserved.",
-    "es": "&copy; 2024 Secure Pulse. Todos los derechos reservados."
+    "he": "&copy 2024 Secure Pulse. כל הזכויות שמורות.",
+    "en": "&copy 2024 Secure Pulse. All rights reserved.",
+    "es": "&copy 2024 Secure Pulse. Todos los derechos reservados."
   },
   "section_health_in_our_lives": {
     "he": "הבריאות הדיגיטלית בחיינו",
