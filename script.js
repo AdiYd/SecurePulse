@@ -78,6 +78,15 @@ function applyTranslations(lang) {
         footer.style.direction = lang === 'he' ? 'rtl' : 'ltr';
         footer.style.textAlign = lang === 'he' ? 'right' : 'left';
       }
+      // טיפול בכיוון החיצים של הרשימות
+      document.querySelectorAll('#infoList li').forEach((element)=>{
+        if (lang !== 'he'){
+            element.classList.add('leftArrow');
+        }
+        else {
+            element.classList.remove('leftArrow');
+        }
+      })
 
       // טיפול באלמנטים שתמיד צריכים להיות LTR
       document.querySelectorAll('.always-ltr').forEach(element => {

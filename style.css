@@ -478,7 +478,10 @@ footer {
 }
 
 /* Utility Classes */
-.process-list, .why-choose-us ul, .about-list {
+.process-list,
+.why-choose-us ul,
+.about-list,
+ul.benefits-list {
     list-style-type: none;
     padding-right: 0;
 }
@@ -493,6 +496,27 @@ footer {
     content: '\2713';
     position: absolute;
     right: 0;
+    /* position: relative;
+    margin-left: 14px;
+    margin-right: 14px; */
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+li.leftArrow,
+li.leftArrow,
+li.leftArrow {
+    margin-bottom: 10px;
+    padding-left: 20px;
+    position: relative;
+}
+
+
+li.leftArrow::before,
+li.leftArrow::before,
+li.leftArrow::before {
+    content: '\2713';
+    position: absolute;
+    left: 0;
     /* position: relative;
     margin-left: 14px;
     margin-right: 14px; */
