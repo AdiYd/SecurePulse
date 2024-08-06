@@ -1,0 +1,46 @@
+# General
+*.log
+*.tmp
+*.temp
+*~
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Editor backups
+*.bak
+*.swp
+
+# Build/compiled output
+/dist
+/build
+
+# Node.js modules
+node_modules/
+
+# IDE/Text editor files
+.idea/
+.vscode/
+
+# Package manager caches
+.npm
+.yarn
+/bower_components
+/jspm_packages
+
+# macOS
+.Spotlight-V100
+.Trashes
+
+# Windows
+*.cab
+*.msi
+*.msm
+*.msp
+
+# System Files
+desktop.ini
+ehthumbs.db
+Network Trash Folder
+Temporary Items
