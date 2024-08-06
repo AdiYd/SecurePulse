@@ -623,7 +623,7 @@ li.leftArrow::before {
     }
 
     .language-dropdown{
-        right: -50px;
+        /* right: -50px; */
     }
 
 
@@ -709,7 +709,7 @@ li.leftArrow::before {
 }
 
 /* Dark Mode Support */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
     :root {
         --background-color: #333;
         --text-color: #f5f5f5;
@@ -737,6 +737,7 @@ li.leftArrow::before {
     }
 }
 
+*/
 main.blog-page {
     background: linear-gradient(to bottom, #0a2342d9, #ffffff);
     min-height: calc(100vh - 60px); /* מניח שהכותרת היא בערך 60px גבוהה */
